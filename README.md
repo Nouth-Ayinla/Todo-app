@@ -269,6 +269,39 @@ npm install
 2. Run `pod install` in iOS directory
 3. Clean build folder in Xcode
 
+# Android APK with Convex Backend
+
+1. Install EAS CLI:
+   ```bash
+   npm install -g eas-cli
+
+2. Login to Expo:
+
+
+eas login
+3. Add Convex Deploy Key as EAS Secret:
+
+First, get your Convex deploy key by running:
+
+
+npx convex deploy
+Then add it as an EAS secret:
+
+
+eas secret:create --scope project --name CONVEX_DEPLOY_KEY --value "your-deploy-key-here"
+Configure EAS Build:
+
+Ensure eas.json has the correct configuration (already set up in this project).
+
+3. Build APK:
+
+
+eas build --platform android --profile preview
+Download APK:
+
+After build completes, download the APK from the EAS dashboard or the link provided in terminal.
+
+
 
 
 # Debugging
